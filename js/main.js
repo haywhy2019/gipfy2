@@ -24,14 +24,14 @@ function submit(e) {
     xhr.onload = function() {
         if (this.status === 200) {
             const response = JSON.parse(this.responseText);
-            //console.log(response)
+            console.log(response)
 
             var output = '';
 
             if (response.meta.msg === 'OK') {
                 response.data.forEach(function(gif) {
-                    output += `<img src = '${gif.embed_url}'>`
-                        //console.log(output)
+                    output += `<img src = 'https://media.giphy.com/media/${gif.id}/source.gif'>`
+                    console.log(output)
                 });
             } else {
                 output += `<li>something went wrong</li>`
